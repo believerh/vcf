@@ -230,13 +230,27 @@ body {
 }
 
 @media (max-width: 600px) {
-  .card { padding: 24px 18px; max-width: 95vw; }
-  .header h1 { font-size: 1.5rem; }
+  .card { 
+    padding: 24px 16px; 
+    max-width: 92vw;
+    border-radius: 16px;
+  }
+  .header h1 { font-size: 1.5rem; margin-bottom: 4px; }
+  .header p { font-size: 0.8rem; }
   .stat-number { font-size: 1.6rem; }
-  .whatsapp-btn { width: 100%; justify-content: center; padding: 12px 16px; font-size: 0.92rem; }
-  .closed-icon { font-size: 2.2rem; }
   .stat-box { padding: 12px 20px; }
-  .phase-box { padding: 14px 16px; }
+  .whatsapp-btn { 
+    width: 100%; 
+    justify-content: center; 
+    padding: 12px 16px; 
+    font-size: 0.92rem;
+    border-radius: 12px;
+  }
+  .closed-icon { font-size: 2rem; margin-bottom: 8px; }
+  .phase-box { padding: 14px 16px; margin-bottom: 16px; }
+  .phase-title { font-size: 1.1rem; }
+  .divider { margin: 16px 0; }
+  .download-btn { padding: 12px; font-size: 0.88rem; }
 }
 
 @media (max-width: 480px) {
@@ -258,54 +272,54 @@ body {
       <div class="closed-icon">
         <i class="fas fa-hand-paper"></i>
       </div>
-      <div class="header" style="margin-bottom:16px;">
-        <h1 style="font-size:1.6rem;margin-bottom:6px;">Registration Closed</h1>
-        <p style="font-size:0.82rem;">Phase <span id="phaseNumber"><%= phase || 1 %></span> registration has concluded. Thank you!</p>
+      <div class="header" style="margin-bottom:12px;">
+        <h1 style="font-size:1.5rem;margin-bottom:4px;">Registration Closed</h1>
+        <p style="font-size:0.78rem;line-height:1.4;">Phase <span id="phaseNumber"><%= phase || 1 %></span> registration has concluded.</p>
       </div>
 
-      <div class="stats">
-        <div class="stat-box">
-          <span class="stat-number"><%= contacts.length %></span>
-          <span class="stat-label">contacts registered</span>
+      <div class="stats" style="margin-bottom:14px;">
+        <div class="stat-box" style="padding:10px 18px;">
+          <span class="stat-number" style="font-size:1.5rem;"><%= contacts.length %></span>
+          <span class="stat-label" style="font-size:0.68rem;">contacts</span>
         </div>
       </div>
 
-      <div class="phase-box">
-        <div class="phase-label">Next Phase</div>
-        <div class="phase-title" style="font-size:1.1rem;margin-bottom:6px;">Phase <span id="nextPhase"><%= (phase || 1) + 1 %></span> Coming Soon</div>
-        <p style="font-size:0.78rem;margin-bottom:0;">Follow our channel for updates.</p>
+      <div class="phase-box" style="padding:12px 14px;margin-bottom:14px;">
+        <div class="phase-label" style="font-size:0.65rem;margin-bottom:2px;">Next Phase</div>
+        <div class="phase-title" style="font-size:1rem;margin-bottom:4px;">Phase <span id="nextPhase"><%= (phase || 1) + 1 %></span></div>
+        <p style="font-size:0.72rem;line-height:1.4;margin-bottom:0;">Follow our channel for updates.</p>
       </div>
 
-      <a href="https://whatsapp.com/channel/0029Vb8RxF6IN9ifRmJp4S3l" target="_blank" rel="noopener noreferrer" class="whatsapp-btn wa-cta">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <a href="https://whatsapp.com/channel/0029Vb8RxF6IN9ifRmJp4S3l" target="_blank" rel="noopener noreferrer" class="whatsapp-btn wa-cta" style="padding:12px;font-size:0.88rem;border-radius:10px;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:18px;height:18px;">
           <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 015.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 01-3.48-8.413z"/>
         </svg>
-        Get Phase <span id="nextPhaseCta"><%= (phase || 1) + 1 %></span> Notification
+        Get Phase <span id="nextPhaseCta"><%= (phase || 1) + 1 %></span> Alert
       </a>
 
-      <div class="divider"></div>
+      <div class="divider" style="margin:12px 0;"></div>
 
-      <a href="/download.vcf" class="download-btn">
-        <i class="fas fa-download"></i>
-        Download VCF File
+      <a href="/download.vcf" class="download-btn" style="padding:11px;font-size:0.85rem;border-radius:10px;">
+        <i class="fas fa-download" style="font-size:14px;"></i>
+        Download VCF
       </a>
-      <p class="download-note">Only download if you registered in Phase <span id="phaseNumberNote"><%= phase || 1 %></span>.</p>
+      <p class="download-note" style="font-size:0.68rem;margin-top:6px;">For Phase <span id="phaseNumberNote"><%= phase || 1 %></span> registrants.</p>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script>
-    if (typeof particlesJS !== 'undefined') {
+    if (typeof particlesJS !== 'undefined' && window.innerWidth > 768) {
       particlesJS('particles-js', {
         particles: {
-          number: { value: 60, density: { enable: true, value_area: 800 } },
+          number: { value: 40, density: { enable: true, value_area: 600 } },
           color: { value: ['#6c5ce7', '#00cec9', '#ffffff'] },
           shape: { type: 'circle' },
-          opacity: { value: 0.2, random: true },
-          size: { value: 3, random: true },
-          move: { enable: true, speed: 1.5, direction: 'none' }
+          opacity: { value: 0.15, random: true },
+          size: { value: 2, random: true },
+          move: { enable: true, speed: 1, direction: 'none' }
         },
-        interactivity: { detectsOn: 'canvas', events: { onhover: { enable: true, mode: 'repulse' } } }
+        interactivity: { detectsOn: 'canvas', events: { onhover: { enable: false } } }
       });
     }
   </script>
