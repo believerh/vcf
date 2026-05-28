@@ -210,3 +210,59 @@ input:focus {
   transform: translateY(-2px); 
   box-shadow: 0 10px 25px -5px rgba(99,102,241,0.4); 
 }
+
+@media (max-width: 600px) {
+  .container {
+    padding: 30px 16px;
+  }
+  
+  .content-box {
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+  
+  h1 {
+    font-size: 28px;
+  }
+  
+  .input-group,
+  .whatsapp-btn,
+  .download-btn,
+  .form-btn {
+    max-width: 100%;
+  }
+  
+  input {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+  
+  .whatsapp-btn, .download-btn, .form-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 12px;
+  }
+  
+  .content-box {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  .input-group {
+    margin: 12px 0;
+  }
+  
+  .success {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+}
