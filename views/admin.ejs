@@ -34,7 +34,7 @@
       <% if (contacts.length) { %>
       <table class="contacts-table">
         <thead>
-          <tr><th>#</th><th>Name</th><th>Phone</th></tr>
+          <tr><th>#</th><th>Name</th><th>Phone</th><th>Actions</th></tr>
         </thead>
         <tbody>
           <% contacts.forEach((c, i) => { %>
@@ -42,10 +42,17 @@
             <td style="color: rgba(255,255,255,0.5);"><%= i + 1 %></td>
             <td><%= c.name %></td>
             <td><%= c.phone || '-' %></td>
+            <td>
+              <a href="/admin/edit/<%= i %>?password=<%= encodeURIComponent(password) %>" class="btn btn-primary" style="padding: 6px 12px; font-size: 12px;">Edit</a>
+              <form method="POST" action="/admin/delete/<%= i %>" style="display:inline;">
+                <input type="hidden" name="password" value="<%= password %>">
+                <button type="submit" class="btn btn-danger" style="padding: 6px 12px; font-size: 12px;" onclick="return confirm('Delete this contact?')">Delete</button>
+              </form>
+            </td>
           </tr>
           <% }) %>
         </tbody>
-      </table>
+        </table>
       <% } else { %>
       <div class="no-contacts">No contacts submitted yet</div>
       <% } %>

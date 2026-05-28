@@ -169,4 +169,62 @@ app.post('/admin/reset', (req, res) => {
   res.redirect('/admin?password=' + encodeURIComponent(password));
 });
 
+app.post('/admin/delete/:index', (req, res) => {
+  const password = req.body.password || '';
+  if (password !== ADMIN_PASSWORD) {
+    return res.status(403).send('Access denied');
+  }
+  const data = loadData();
+  const index = parseInt(req.params.index);
+  if (index >= 0 && index < data.contacts.length) {
+    data.contacts.splice(index, 1);
+    saveData(data);
+    generateVCF(data.contacts);
+  }
+  res.redirect('/admin?password=' + encodeURIComponent(password));
+});
+
+app.get('/admin/edit/:index', (req, res) => {
+  const password = req.query.password || '';
+  if (password !== ADMIN_PASSWORD) {
+    return res.status(403).send('Access denied');
+  }
+  const index = parseInt(req.params.index);
+  const data = loadData();
+  if (index < 0 || index >= data.contacts.length) {
+    return res.status(404).send('Contact not found');
+  }
+  res.render('edit', {
+    password: password,
+    contact: data.contacts[index],
+    index: index
+  });
+});
+
+app.post('/admin/update/:index', (req, res) => {
+  const password = req.body.password || '';
+  if (password !== ADMIN_PASSWORD) {
+    return res.status(403).send('Access denied');
+  }
+  const name = req.body.name?.trim();
+  const phone = req.body.phone?.trim();
+  const index = parseInt(req.params.index);
+  
+  if (!name || name.length < 2) {
+    return res.status(400).send('Name is required and must be at least 2 characters');
+  }
+  
+  if (phone && !/^[\d\s\+\-\(\)]+$/.test(phone)) {
+    return res.status(400).send('Invalid phone number format');
+  }
+  
+  const data = loadData();
+  if (index >= 0 && index < data.contacts.length) {
+    data.contacts[index] = { name, phone };
+    saveData(data);
+    generateVCF(data.contacts);
+  }
+  res.redirect('/admin?password=' + encodeURIComponent(password));
+});
+
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

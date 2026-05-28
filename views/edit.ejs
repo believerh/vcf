@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/admin.css">
+  <style>
+    .edit-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .edit-input {
+      padding: 14px 16px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 15px;
+      font-family: inherit;
+    }
+    .edit-input::placeholder { color: rgba(255,255,255,0.5); }
+    .edit-input:focus {
+      outline: none;
+      border-color: #6366f1;
+      background: rgba(255,255,255,0.15);
+    }
+    .edit-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .edit-btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 15px;
+    }
+    .save-btn { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; }
+    .cancel-btn { background: rgba(255,255,255,0.1); color: white; text-decoration: none; text-align: center; }
+    @media (max-width: 600px) {
+      .edit-actions { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-header">
+    <h1>Edit Contact</h1>
+  </div>
+  <div class="admin-container">
+    <div class="card">
+      <div class="card-header">
+        <h2>Edit Contact #<%= index + 1 %></h2>
+        <p>Update contact information</p>
+      </div>
+      <form method="POST" action="/admin/update/<%= index %>" class="edit-form">
+        <input type="hidden" name="password" value="<%= password %>">
+        <input type="text" name="name" class="edit-input" placeholder="Full Name" value="<%= contact.name %>" required>
+        <input type="tel" name="phone" class="edit-input" placeholder="Phone Number" value="<%= contact.phone %>" pattern="\+?\d{10,15}">
+        <div class="edit-actions">
+          <button type="submit" class="edit-btn save-btn">Save Changes</button>
+          <a href="/admin?password=<%= encodeURIComponent(password) %>" class="edit-btn cancel-btn">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
