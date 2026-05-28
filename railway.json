@@ -1,0 +1,8 @@
+{
+  "services": [
+    {
+      "name": "web",
+      "type": "node"
+    }
+  ]
+}

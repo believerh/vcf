@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CypherX VCF - Registration Closed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style> 	
+:root {
+  --primary: #6c5ce7;
+  --primary-dark: #5649c0;
+  --secondary: #00cec9;
+  --wa-green: #25d366;
+  --wa-green-dark: #1da851;
+  --success: #00b894;
+  --error: #d63031;
+  --light: #f5f6fa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: var(--light);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: transparent;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  animation: fadeIn 0.6s ease-out;
+}
+.closed-icon {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 16px;
+  color: rgba(255,255,255,0.5);
+}
+
+.phase-box {
+  background: rgba(108, 92, 231, 0.12);
+  border: 1px solid rgba(108, 92, 231, 0.25);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.phase-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 4px;
+}
+
+.phase-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.phase-box p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+
+.wa-cta {
+  width: 100%;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 15px;
+  border-radius: 14px;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+  margin: 24px 0;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 12px;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.download-btn:hover {
+  background: rgba(255,255,255,0.12);
+  color: white;
+}
+
+.download-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 10px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.header h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 14px 32px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.stat-box:hover { transform: translateY(-3px); }
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  background: linear-gradient(45deg, var(--wa-green), var(--wa-green-dark));
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .card { padding: 28px 20px; }
+  .header h1 { font-size: 1.5rem; }
+  .stat-number { font-size: 1.6rem; }
+  .whatsapp-btn { width: 100%; justify-content: center; }
+}
+</style>
+  </head>
+<body>
+  <div id="particles-js"></div>
+
+  <div class="container">
+    <div class="card">
+      <div class="closed-icon">
+        <i class="fas fa-hand-paper"></i>
+      </div>
+      <div class="header">
+        <h1>Registration Closed</h1>
+        <p>Phase <span id="phaseNumber"><%= phase || 1 %></span> registration has concluded. Thank you to everyone who signed up!</p>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <span class="stat-number"><%= contacts.length %></span>
+          <span class="stat-label">contacts registered</span>
+        </div>
+      </div>
+
+      <div class="phase-box">
+        <div class="phase-label">Next Phase</div>
+        <div class="phase-title">Phase <span id="nextPhase"><%= (phase || 1) + 1 %></span> Coming Soon</div>
+        <p>We're preparing for the next registration phase. Follow our channel to be the first to know when it opens.</p>
+      </div>
+
+      <a href="https://whatsapp.com/channel/0029VbBZitc9mrGcTHVmmP2y" target="_blank" rel="noopener noreferrer" class="whatsapp-btn wa-cta">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 015.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 01-3.48-8.413z"/>
+        </svg>
+        Get Phase <span id="nextPhaseCta"><%= (phase || 1) + 1 %></span> Notification
+      </a>
+
+      <div class="divider"></div>
+
+      <a href="/download.vcf" class="download-btn">
+        <i class="fas fa-download"></i>
+        Download VCF File
+      </a>
+      <p class="download-note">Only download if you registered in Phase <span id="phaseNumberNote"><%= phase || 1 %></span>.</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    if (typeof particlesJS !== 'undefined') {
+      particlesJS('particles-js', {
+        particles: {
+          number: { value: 60, density: { enable: true, value_area: 800 } },
+          color: { value: ['#6c5ce7', '#00cec9', '#ffffff'] },
+          shape: { type: 'circle' },
+          opacity: { value: 0.2, random: true },
+          size: { value: 3, random: true },
+          move: { enable: true, speed: 1.5, direction: 'none' }
+        },
+        interactivity: { detectsOn: 'canvas', events: { onhover: { enable: true, mode: 'repulse' } } }
+      });
+    }
+  </script>
+</body>
+</html>

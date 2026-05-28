@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <% if (success) { %>
+    <div class="success">Your contact has been saved successfully!</div>
+    <% } %>
+    
+    <% if (downloadEnabled) { %>
+      <%- include('closed', { contacts: contacts, phase: 1 }) %>
+    <% } else { %>
+    <div class="content-box">
+      <h1>Contact Registration</h1>
+      <form method="POST" action="/submit">
+        <div class="input-group"><input name="name" placeholder="Full Name" required></div>
+        <div class="input-group"><input name="phone" placeholder="Phone Number (+233XXXXXXXXX)" pattern="\+?\d{10,15}" title="Format: +233 followed by number"></div>
+        <button type="submit" class="form-btn">Add Contact</button>
+      </form>
+    </div>
+    <% } %>
+  </div>
+</body>
+</html>

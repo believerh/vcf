@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <div class="admin-header">
+    <h1>Admin Dashboard</h1>
+    <span>Total: <%= contacts.length %> contacts | Downloads: <%= downloadCount %></span>
+  </div>
+  <div class="admin-container">
+    <div class="card">
+      <div class="card-header">
+        <h2>Download Control</h2>
+        <p>Toggle VCF download availability</p>
+      </div>
+      <div class="status <%= downloadEnabled ? 'status-enabled' : 'status-disabled' %>">
+        <span class="status-indicator <%= downloadEnabled ? 'enabled' : 'disabled' %>"><%= downloadEnabled ? '✓ Download Enabled' : '✗ Download Disabled' %></span>
+        <a href="/admin/<%= downloadEnabled ? 'disable' : 'enable' %>?password=<%= encodeURIComponent(password) %>" class="btn <%= downloadEnabled ? 'btn-danger' : 'btn-primary' %>"><%= downloadEnabled ? 'Disable Download' : 'Enable Download' %></a>
+        <form method="POST" action="/admin/reset" style="display:inline;">
+          <input type="hidden" name="password" value="<%= password %>">
+          <button type="submit" class="btn btn-danger" onclick="return confirm('Reset all contacts and delete VCF file?')">Reset All</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header">
+        <h2>Contact List (<%= contacts.length %>)</h2>
+        <p>All submitted contacts</p>
+      </div>
+      <% if (contacts.length) { %>
+      <table class="contacts-table">
+        <thead>
+          <tr><th>#</th><th>Name</th><th>Phone</th></tr>
+        </thead>
+        <tbody>
+          <% contacts.forEach((c, i) => { %>
+          <tr>
+            <td style="color: rgba(255,255,255,0.5);"><%= i + 1 %></td>
+            <td><%= c.name %></td>
+            <td><%= c.phone || '-' %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      <% } else { %>
+      <div class="no-contacts">No contacts submitted yet</div>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>

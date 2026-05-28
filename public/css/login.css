@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+  font-family: 'Inter', sans-serif; 
+  background: linear-gradient(135deg, #0a0f2c 0%, #1a1f3a 50%, #0f172a 100%); 
+  min-height: 100vh; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 20px; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+body::before { 
+  content: ""; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); 
+  background-size: 50px 50px; 
+}
+
+.login-box { 
+  background: rgba(255,255,255,0.1); 
+  backdrop-filter: blur(20px); 
+  border-radius: 20px; 
+  padding: 50px 40px; 
+  width: 100%; 
+  max-width: 420px; 
+  text-align: center; 
+  border: 1px solid rgba(255,255,255,0.2); 
+  position: relative; 
+  z-index: 1; 
+}
+
+.login-box h1 {
+  color: white; 
+  font-weight: 800; 
+  font-size: 28px; 
+  margin-bottom: 15px; 
+}
+
+.login-box p {
+  color: rgba(255,255,255,0.7); 
+  margin-bottom: 30px; 
+  font-size: 15px; 
+}
+
+input {
+  width: 100%; 
+  padding: 16px 20px; 
+  margin: 12px 0; 
+  border: 2px solid rgba(255,255,255,0.2); 
+  border-radius: 12px; 
+  font-size: 16px; 
+  font-weight: 500; 
+  background: rgba(255,255,255,0.1); 
+  color: white; 
+  transition: all 0.3s; 
+}
+
+input::placeholder { color: rgba(255,255,255,0.5); }
+
+input:focus {
+  outline: none; 
+  border-color: #6366f1; 
+  background: rgba(255,255,255,0.15); 
+}
+
+button {
+  width: 100%; 
+  padding: 16px; 
+  margin-top: 10px; 
+  background: linear-gradient(135deg, #6366f1, #8b5cf6); 
+  color: white; 
+  border: none; 
+  border-radius: 12px; 
+  font-size: 16px; 
+  font-weight: 600; 
+  cursor: pointer; 
+  transition: all 0.3s; 
+}
+
+button:hover {
+  transform: translateY(-2px); 
+  box-shadow: 0 10px 25px -5px rgba(99,102,241,0.4); 
+}
