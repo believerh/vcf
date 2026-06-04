@@ -73,9 +73,44 @@ END:VCARD
   return uniqueContacts.length;
 }
 
+function parseVCF(filepath) {
+  try {
+    const content = fs.readFileSync(filepath, 'utf8');
+    const contacts = [];
+    content.split('BEGIN:VCARD').forEach((block, i) => {
+      if (i === 0) return;
+      const lines = block.split('\n');
+      let name = '', phone = '';
+      lines.forEach(line => {
+        if (line.startsWith('FN:')) name = line.substring(3).trim();
+        if (line.startsWith('TEL')) {
+          const match = line.match(/TEL[^:]*:(\+?[\d\s\-\(\)]*)/);
+          phone = match ? match[1].trim() : '';
+        }
+      });
+      if (name && !name.includes('VERSION')) {
+        contacts.push({ name, phone });
+      }
+    });
+    return contacts;
+  } catch {
+    return [];
+  }
+}
+
 function ensureVCF() {
-  const data = loadData();
-  generateVCF(data.contacts);
+  if (fs.existsSync(VCF_FILE)) {
+    const vcfContacts = parseVCF(VCF_FILE);
+    const data = loadData();
+    if (data.contacts.length === 0) {
+      data.contacts = vcfContacts;
+      saveData(data);
+    }
+    generateVCF(data.contacts);
+  } else {
+    const data = loadData();
+    generateVCF(data.contacts);
+  }
 }
 
 ensureVCF();

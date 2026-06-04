@@ -1,5 +1,186 @@
 {
-  "contacts": [],
+  "contacts": [
+    {
+      "name": "OG Believer",
+      "phone": "+233534970884"
+    },
+    {
+      "name": "Qwecilinking",
+      "phone": "+233209933765"
+    },
+    {
+      "name": "Thess",
+      "phone": "+233246930941"
+    },
+    {
+      "name": "Derrick Delali",
+      "phone": "+233257655925"
+    },
+    {
+      "name": "MACHIAVELLi",
+      "phone": "+233207503533"
+    },
+    {
+      "name": "Young Rich",
+      "phone": "+233542016286"
+    },
+    {
+      "name": "Big Boss",
+      "phone": "+2347086057694"
+    },
+    {
+      "name": "Akotey Daniels Harry",
+      "phone": "+233534747863"
+    },
+    {
+      "name": "404Not_Found",
+      "phone": "+237653123336"
+    },
+    {
+      "name": "Scott Tjay",
+      "phone": "+256749450254"
+    },
+    {
+      "name": "VERLABET",
+      "phone": "+237673216563"
+    },
+    {
+      "name": "Fosu Blessing 1",
+      "phone": "+233535176108"
+    },
+    {
+      "name": "Fosu Blessing 2",
+      "phone": "+233207797467"
+    },
+    {
+      "name": "Akuoko Christopher",
+      "phone": "+233541693702"
+    },
+    {
+      "name": "Sssor",
+      "phone": "+233541693702"
+    },
+    {
+      "name": "2TIMESAGUY",
+      "phone": "+233534233304"
+    },
+    {
+      "name": "Authentic Kenneto",
+      "phone": "+233596091669"
+    },
+    {
+      "name": "Abin",
+      "phone": "+972559445191"
+    },
+    {
+      "name": "AV",
+      "phone": "+237652643410"
+    },
+    {
+      "name": "C H",
+      "phone": "+237674902012"
+    },
+    {
+      "name": "Big P",
+      "phone": "+237672771753"
+    },
+    {
+      "name": "Devic Rycon",
+      "phone": "+233246808537"
+    },
+    {
+      "name": "don carlos",
+      "phone": "+254795540536"
+    },
+    {
+      "name": "Don tech",
+      "phone": "+254715732186"
+    },
+    {
+      "name": "Dorinda Obenewaa",
+      "phone": "+233241839065"
+    },
+    {
+      "name": "Willeyvsuals",
+      "phone": "+2348085285753"
+    },
+    {
+      "name": "BATISTA",
+      "phone": "+237671110881"
+    },
+    {
+      "name": "Jaspi",
+      "phone": "+233555525146"
+    },
+    {
+      "name": "Yeboah JAY",
+      "phone": "+233596721079"
+    },
+    {
+      "name": "Francis Gattuso",
+      "phone": "+233545401388"
+    },
+    {
+      "name": "Don habibi",
+      "phone": "+2349075826748"
+    },
+    {
+      "name": "Healingheart",
+      "phone": "+2348153729342"
+    },
+    {
+      "name": "Ibrahtech",
+      "phone": "+254750581565"
+    },
+    {
+      "name": "Jonah de Grt",
+      "phone": "+233709882385"
+    },
+    {
+      "name": "Ancestor Kum",
+      "phone": "+237653177175"
+    },
+    {
+      "name": "Samskhid",
+      "phone": "+233542827560"
+    },
+    {
+      "name": "KING KONG",
+      "phone": "+256707056641"
+    },
+    {
+      "name": "Jonah Senoga",
+      "phone": "+233762693648"
+    },
+    {
+      "name": "Mbogga Musa",
+      "phone": "+233700593504"
+    },
+    {
+      "name": "cesc camreen",
+      "phone": "+233786025146"
+    },
+    {
+      "name": "Mr. Owino",
+      "phone": "+254713494069"
+    },
+    {
+      "name": "Rauf",
+      "phone": "+233552978997"
+    },
+    {
+      "name": "Hamidun cesc",
+      "phone": ""
+    },
+    {
+      "name": "khalid nyanzi",
+      "phone": ""
+    },
+    {
+      "name": "Jabreel",
+      "phone": "+254716382436"
+    }
+  ],
   "downloadEnabled": false,
   "downloadCount": 0
 }
